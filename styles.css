@@ -123,3 +123,35 @@ footer a:hover {
     background-color: var(--secondary-bg);
     outline: 2px solid var(--primary-color);
 }
+
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #222;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.cookie-banner p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.cookie-banner button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.cookie-banner button:hover {
+    background-color: #0056b3;
+}
