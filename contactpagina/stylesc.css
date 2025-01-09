@@ -1,5 +1,7 @@
-*, *::before, *::after {
-    box-sizing: border-box;
+/* Global styles */
+html {
+    font-size: 62.5%;
+    font-family: sans-serif;
 }
 
 :root {
@@ -12,20 +14,32 @@
     scroll-behavior: smooth;
 }
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 html, body {
-    margin: 0; /* Verwijdert standaard marges */
-    padding: 0; /* Verwijdert standaard padding */
+    margin: 0;
+    padding: 0;
 }
 
 body {
+    font-size: 1.6rem;
     background-color: var(--text-color);
     color: var(--primary-color);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    font-family: var(--font-family);
 }
 
+/* Container */
+.container {
+    margin: 0 auto;
+    padding: 0 1rem;
+    max-width: 1280px;
+}
+
+/* Header */
 header {
     width: 100%;
     background-color: var(--primary-bg);
@@ -44,9 +58,16 @@ header .container {
     padding: 1rem;
 }
 
+/* Nieuwe regels toegevoegd voor consistentie */
+header {
+    height: auto;
+    padding: 1rem;
+}
+
 h1 {
     margin: 0;
     text-align: center;
+    font-size: 3rem; /* Zorg dat het consistent groot is */
 }
 
 nav ul {
@@ -80,6 +101,7 @@ nav .login-button {
     padding: 1rem 2rem;
 }
 
+/* Main content */
 main {
     flex: 1;
     padding: 2rem 1rem;
@@ -90,10 +112,57 @@ main .container {
     margin: 0 auto;
 }
 
+/* Form fields */
+input:not([type=submit]),
+textarea {
+    display: block;
+    width: 100%;
+    max-width: 40rem;
+    padding: 0.75em;
+    border: 1px solid #666;
+    border-radius: 0.3rem;
+}
+
+label,
+input[type=submit] {
+    margin-top: 3rem;
+}
+
+input[type=submit] {
+    padding: 0.5em 2em;
+    background-color: var(--primary-bg);
+    border: none;
+    color: var(--text-color);
+    font-weight: bold;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type=submit]:hover {
+    background-color: var(--secondary-bg);
+    color: var(--primary-color);
+}
+
+label {
+    display: block;
+    margin-bottom: 0.2em;
+    font-weight: bold;
+}
+
+.message {
+    font-size: 1.4rem;
+}
+
+.message.error {
+    color: #b90e0a;
+}
+
+/* Footer */
 footer {
     width: 100%;
-    background-color: var(--primary-bg);
-    color: var(--text-color);
+    background-color: lightblue;
+    color: #FFFDFF;
     margin-top: 22.3rem;
     padding: 1rem 0;
     flex-shrink: 0;
@@ -110,16 +179,16 @@ footer ul {
 footer a {
     display: block;
     padding: 1rem 2rem;
-    color: var(--primary-color);
+    color: black;
     text-decoration: none;
 }
 
 footer p {
-    color: var(--primary-color);
+    color: black;
     text-align: center;
 }
 
 footer a:hover {
-    background-color: var(--secondary-bg);
-    outline: 2px solid var(--primary-color);
+    background-color: aliceblue;
+    outline: 2px solid black;
 }
