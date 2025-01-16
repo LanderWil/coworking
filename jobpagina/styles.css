@@ -1,49 +1,194 @@
+/* Global styles */
+html {
+    font-size: 62.5%;
+    font-family: sans-serif;
+}
+
+:root {
+    --primary-bg: lightblue;
+    --primary-color: black;
+    --secondary-bg: aliceblue;
+    --text-color: #FFFDFF;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
+html, body {
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
 }
+
+body {
+    font-size: 1.6rem;
+    background-color: var(--text-color);
+    color: var(--primary-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Container */
+.container {
+    margin: 0 auto;
+    padding: 0 1rem;
+    max-width: 1280px;
+}
+
+/* Header */
 header {
-    background-color: #007BFF;
-    color: white;
+    width: 100%;
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    margin: 0; /* Zorgt ervoor dat de header volledig bovenaan begint */
+    padding: 0;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 1rem;
+}
+
+/* Nieuwe regels toegevoegd voor consistentie */
+header {
+    height: auto;
+    padding: 1rem;
+}
+
+h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 3rem; /* Zorg dat het consistent groot is */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav a {
+    display: block;
+    padding: 1rem 1.5rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: background-color 0.3s, outline 0.3s;
+}
+
+nav a:hover {
+    background-color: var(--secondary-bg);
+    outline: 2px solid var(--primary-color);
+}
+
+nav .login-button {
+    margin-left: auto;
+    background-color: var(--secondary-bg);
+    padding: 1rem 2rem;
+}
+
+/* Main content */
+main {
+    flex: 1;
+    padding: 2rem 1rem;
+}
+
+main .container {
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+/* Form fields */
+input:not([type=submit]),
+textarea {
+    display: block;
+    width: 100%;
+    max-width: 40rem;
+    padding: 0.75em;
+    border: 1px solid #666;
+    border-radius: 0.3rem;
+}
+
+label,
+input[type=submit] {
+    margin-top: 3rem;
+}
+
+input[type=submit] {
+    padding: 0.5em 2em;
+    background-color: var(--primary-bg);
+    border: none;
+    color: var(--text-color);
+    font-weight: bold;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type=submit]:hover {
+    background-color: var(--secondary-bg);
+    color: var(--primary-color);
+}
+
+label {
+    display: block;
+    margin-bottom: 0.2em;
+    font-weight: bold;
+}
+
+.message {
+    font-size: 1.4rem;
+}
+
+.message.error {
+    color: #b90e0a;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    background-color: lightblue;
+    color: #FFFDFF;
+    margin-top: 22.3rem;
+    padding: 1rem 0;
+    flex-shrink: 0;
+}
+
+footer ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+footer a {
+    display: block;
+    padding: 1rem 2rem;
+    color: black;
+    text-decoration: none;
+}
+
+footer p {
+    color: black;
     text-align: center;
 }
-.container {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 1rem;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-.job {
-    border-bottom: 1px solid #ddd;
-    padding: 1rem 0;
-}
-.job:last-child {
-    border-bottom: none;
-}
-.job h3 {
-    margin: 0 0 0.5rem;
-    color: #007BFF;
-}
-.job p {
-    margin: 0.5rem 0;
-}
-.job button {
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-}
-.job button:hover {
-    background-color: #0056b3;
+
+footer a:hover {
+    background-color: aliceblue;
+    outline: 2px solid black;
 }
