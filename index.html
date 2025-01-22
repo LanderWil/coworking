@@ -6,6 +6,7 @@
     <title>Homepagina</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://unpkg.com/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="cookie-banner" id="cookie-banner">
@@ -14,61 +15,81 @@
             <button id="accept-btn">Akkoord</button>
         </p>
     </div>
-    <script src="script.js"></script>
-<header>
-    <div class="container">
-        <img src="images/Klus_&_co.png" alt="logo" width="140px">
-        <nav>
+    
+    <header>
+        <div class="container">
+            <a href="./index.html"><img src="./images/Klus_&_co.png" alt="logo" width="140px">
+            <nav>
+                <ul>
+                    <li><a href="./">Home</a></li>
+                    <li><a href="./jobpagina">Jobpagina</a></li>
+                    <li><a href="./contactpagina">Contact</a></li>
+                    <li><a href="./loginpagina">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Welkom bij Klus & Co</h1>
+        <p>Vind hulp voor al je klusjes, wanneer je het nodig hebt.</p>
+        <a href="./jobpagina" class="btn">Aan de slag</a>
+    </section>
+
+    <div class="section-container">
+        <section>
+            <h2>Algemene info</h2>
+            <p>Deze site is gemaakt door studenten en is dus niet effectief in werking voor de dingen die beschreven worden.</p>
+            <p>Op deze site kun je klusjes plaatsen, en andere mensen kunnen je hiermee komen helpen. Jij zelf kunt ook andere mensen helpen. Bezoek de jobpagina om klusjes te bekijken die andere mensen hebben geplaatst.</p>
+        </section>
+    
+        <section>
+            <h2>Werking Jobs</h2>
+            <p>Voordat je een job online kunt zetten, moet je eerst een account aanmaken. Dit kan via de loginpagina.</p>
+            <p>Het is belangrijk om de duur van de job zo accuraat mogelijk in te vullen. Geef ook aan hoeveel mensen betaald krijgen om te helpen. Daarnaast is het verplicht om een telefoonnummer of e-mailadres op te geven, zodat mensen je kunnen contacteren.</p>
+            <p>Mocht er een probleem optreden bij het publiceren of uitvoeren van een job, neem dan contact met ons op via de contactpagina.</p>
+        </section>
+    </div>
+    
+
+    <script src="weatherscript.js"></script>
+
+    <h2 id="weather-title">Weer in Gent</h2>
+
+    
+    <div id="weather-container">
+        <div id="current-weather">
+            <h2>Huidig Weer</h2>
+            <p>Laden...</p>
+        </div>
+    
+        <div id="forecast-weather">
+            <h2>Weersvoorspelling</h2>
+            <p>Laden...</p>
+        </div>
+    </div>
+
+        <section class="active-locations">
+            <h2>Actieve locaties</h2>
+            <div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d160404.49004390938!2d3.549755373431043!3d51.08409875136279!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c370e1339443ad%3A0x40099ab2f4d5140!2sGent!5e0!3m2!1snl!2sbe!4v1736416879258!5m2!1snl!2sbe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
             <ul>
                 <li><a href="./">Home</a></li>
                 <li><a href="./jobpagina">Jobpagina</a></li>
                 <li><a href="./contactpagina">Contact</a></li>
                 <li><a href="./loginpagina">Login</a></li>
             </ul>
-        </nav>
-    </div>
-</header>
-
-<main class="container">
-    <section>
-        <h2>Algemene info</h2>
-        <p>Deze site is gemaakt door studenten en is dus niet effectief in werking voor de dingen die beschreven worden.</p>
-        <p>Op deze site kun je klusjes plaatsen, en andere mensen kunnen je hiermee komen helpen. Jij zelf kunt ook andere mensen helpen. Bezoek de <a href="./jobpagina">jobpagina</a> om klusjes te bekijken die andere mensen hebben geplaatst.</p>
-    </section>
-    <section>
-        <h2>Werking Jobs</h2>
-        <p>Voordat je een job online kunt zetten, moet je eerst een account aanmaken. Dit kan via de <a href="./loginpagina">loginpagina</a>.</p>
-        <p>Het is belangrijk om de duur van de job zo accuraat mogelijk in te vullen. Geef ook aan hoeveel mensen betaald krijgen om te helpen. Daarnaast is het verplicht om een telefoonnummer of e-mailadres op te geven, zodat mensen je kunnen contacteren.</p>
-        <p>Mocht er een probleem optreden bij het publiceren of uitvoeren van een job, neem dan contact met ons op via de <a href="./contactpagina">contactpagina</a>.</p>
-    </section>
-    <script src="weatherscript.js"></script>
-    <h2>Weer in Gent</h2>
-    <div id="current-weather">
-        <h2>Huidig Weer</h2>
-        <p>Laden...</p>
-    </div>
-
-    <div id="forecast-weather">
-        <h2>Weersvoorspelling</h2>
-        <p>Laden...</p>
-    </div>
-    <section>
-        <h2>Actieve locaties</h2>
-        <div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d160404.49004390938!2d3.549755373431043!3d51.08409875136279!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c370e1339443ad%3A0x40099ab2f4d5140!2sGent!5e0!3m2!1snl!2sbe!4v1736416879258!5m2!1snl!2sbe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <p>&copy; Elektronica-Ict Odisee Gent</p>
         </div>
-    </section>
-</main>
+    </footer>
 
-<footer>
-    <div class="container">
-        <ul>
-            <li><a href="./">Home</a></li>
-            <li><a href="./jobpagina">Jobpagina</a></li>
-            <li><a href="./contactpagina">Contact</a></li>
-        </ul>
-        <p>&copy; Elektronica-Ict Odisee Gent</p>
-    </div>
-</footer>
+    <script src="script.js"></script>
 </body>
 </html>
