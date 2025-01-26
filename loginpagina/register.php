@@ -1,14 +1,31 @@
 <?php include('server.php') ?>
+
 <!DOCTYPE html>
-<html>
+<html lang="nl">
 <head>
-  <title>Registration system PHP and MySQL</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="header">
-  	<h2>Register</h2>
-  </div>
+<!-- Header (Navigatiebalk) -->
+<header>
+    <div class="container">
+        <a href="../index.html"><img src="../images/Klus_&_co.png" alt="logo" width="140px"></a>
+        <nav>
+            <ul>
+                <li><a href="../">Home</a></li>
+                <li><a href="../jobpagina">Jobpagina</a></li>
+                <li><a href="../contactpagina">Contact</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
 	
   <form method="post" action="register.php">
   	<?php include('errors.php'); ?>
