@@ -1,5 +1,4 @@
 <?php
-// Retrieve the name and age from the URL parameters
 $name = isset($_GET['name']) ? $_GET['name'] : false;
 $age = isset($_GET['age']) ? $_GET['age'] : false;
 ?>
@@ -9,7 +8,7 @@ $age = isset($_GET['age']) ? $_GET['age'] : false;
 <head>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contactpagina</title>
+    <title>Thank You Page</title>
     <link rel="stylesheet" href="stylesc.css">
     <link rel="stylesheet" href="https://unpkg.com/normalize.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -17,7 +16,7 @@ $age = isset($_GET['age']) ? $_GET['age'] : false;
 <body>
     <header>
         <div class="container">
-            <a href="./index.html"><img src="./images/logo.png" alt="logo" width="140px"></a>
+            <a href="../"><img src="../images/logo.png" alt="logo" width="140px"></a>
             <nav>
                 <ul>
                     <li><a href="../">Home</a></li>
