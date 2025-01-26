@@ -1,0 +1,288 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #333;
+  --light-color: #f9f9f9;
+  --hover-color: #0056b3;
+  --bg-dark: #222;
+  --bg-light: #e3f2fd;
+  --text-light: #fff;
+  --text-dark: #333;
+  --font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--light-color);
+}
+
+header {
+  background-color: var(--secondary-color);
+  padding: 1.25rem 3.125rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 0.3125rem 0.4375rem rgba(0, 0, 0, 0.3);
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  img {
+    width: auto;
+    max-width: 8.75rem;
+    height: auto;
+  }
+
+  nav {
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 1.25rem;
+      margin: 0;
+      padding: 0;
+
+      li {
+        a {
+          color: var(--text-light);
+          text-decoration: none;
+          font-size: 1.2rem;
+          font-weight: bold;
+          padding: 0.5rem 0.9375rem;
+          border-radius: 0.3125rem;
+          transition: background-color 0.3s ease, color 0.3s ease;
+
+          &:hover {
+            background-color: #555;
+            color: var(--text-light);
+          }
+        }
+      }
+    }
+  }
+}
+
+.hero {
+  height: 80vh;
+  background: url('images/klusjes.jpg') no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+  color: var(--text-light);
+  padding: 0 1.25rem;
+  gap: 0.9375rem;
+
+  h1 {
+    font-size: 3rem;
+    margin: 0;
+    text-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin: 0;
+    text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
+  }
+
+  a {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.3125rem;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    text-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
+
+    &:hover {
+      background-color: var(--hover-color);
+    }
+  }
+}
+
+.section-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 0 1.25rem;
+}
+
+section {
+  flex: 1;
+  text-align: left;
+  padding: 1.25rem;
+  margin-bottom: 2.5rem;
+  box-sizing: border-box;
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.25rem;
+    color: var(--secondary-color);
+    margin-top: 0;
+  }
+
+  p {
+    font-size: 1.1rem;
+    max-width: 50rem;
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+    margin-top: 0;
+  }
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: var(--hover-color);
+  }
+}
+
+button,
+a.btn {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  text-decoration: none;
+  padding: 0.625rem 1.25rem;
+  border: none;
+  border-radius: 0.3125rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: var(--hover-color);
+  }
+}
+
+footer {
+  background-color: var(--secondary-color);
+  color: var(--text-light);
+  padding: 1.25rem;
+  text-align: center;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      display: inline-block;
+      margin: 0 0.625rem;
+
+      a {
+        color: var(--text-light);
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  padding: 0.625rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  button {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    padding: 0.3125rem 0.625rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--hover-color);
+    }
+  }
+}
+
+#weather-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 1.25rem;
+  text-align: center;
+
+  #current-weather,
+  #forecast-weather {
+    background-color: #f1f1f1;
+    padding: 1.25rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.1);
+    max-width: 25rem;
+    font-family: var(--font-family);
+    color: var(--secondary-color);
+    flex: 1;
+
+    h2 {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 1.25rem;
+      color: var(--primary-color);
+    }
+
+    p {
+      font-size: 1rem;
+      text-align: center;
+      color: #666;
+
+      &.bold {
+        font-weight: bold;
+        color: var(--secondary-color);
+      }
+    }
+  }
+
+  #current-weather {
+    background-color: var(--bg-light);
+  }
+
+  #forecast-weather {
+    background-color: #f9fbe7;
+  }
+}
+
+h2#weather-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--secondary-color);
+}
+
+.active-locations {
+  text-align: center;
+  margin-bottom: 2.5rem;
+
+  iframe {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+}
