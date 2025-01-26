@@ -1,194 +1,167 @@
-/* Global styles */
-html {
-    font-size: 62.5%;
-    font-family: sans-serif;
-}
-
-:root {
-    --primary-bg: lightblue;
-    --primary-color: black;
-    --secondary-bg: aliceblue;
-    --text-color: #FFFDFF;
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.6;
-    scroll-behavior: smooth;
-}
-
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #333;
+    --light-color: #f9f9f9;
+    --hover-color: #0056b3;
+    --bg-dark: #222;
+    --bg-light: #e3f2fd;
+    --text-light: #fff;
+    --text-dark: #333;
+    --font-family: 'Roboto', sans-serif;
 }
 
 body {
-    font-size: 1.6rem;
-    background-color: var(--text-color);
-    color: var(--primary-color);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    margin: 0;
+    font-family: var(--font-family);
+    color: var(--secondary-color);
+    background-color: var(--light-color);
 }
 
-/* Container */
-.container {
-    margin: 0 auto;
-    padding: 0 1rem;
-    max-width: 1280px;
-}
-
-/* Header */
 header {
-    width: 100%;
-    background-color: var(--primary-bg);
-    color: var(--text-color);
-    margin: 0; /* Zorgt ervoor dat de header volledig bovenaan begint */
-    padding: 0;
-    position: relative;
+    background-color: var(--secondary-color);
+    padding: 1.25rem 3.125rem;
+    position: sticky;
     top: 0;
-    left: 0;
+    z-index: 1000;
+    box-shadow: 0 0.3125rem 0.4375rem rgba(0, 0, 0, 0.3);
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    img {
+        width: auto;
+        max-width: 8.75rem;
+        height: auto;
+    }
+
+    nav {
+        ul {
+            list-style: none;
+            display: flex;
+            gap: 1.25rem;
+            margin: 0;
+            padding: 0;
+
+            li {
+                a {
+                    color: var(--text-light);
+                    text-decoration: none;
+                    font-size: 1.2rem;
+                    font-weight: bold;
+                    padding: 0.5rem 0.9375rem;
+                    border-radius: 0.3125rem;
+                    transition: background-color 0.3s ease, color 0.3s ease;
+
+                    &:hover {
+                        background-color: #555;
+                        color: var(--text-light);
+                    }
+                }
+            }
+        }
+    }
 }
 
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
+.contact-section {
+    margin: 2rem auto;
+    max-width: 800px;
+    background: var(--light-color);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Nieuwe regels toegevoegd voor consistentie */
-header {
-    height: auto;
-    padding: 1rem;
-}
-
-h1 {
-    margin: 0;
+.contact-section h1 {
     text-align: center;
-    font-size: 3rem; /* Zorg dat het consistent groot is */
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 2rem;
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    flex-wrap: wrap;
+.contact-section p {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--secondary-color);
 }
 
-nav ul li {
-    margin: 0;
+.contact-section form .form-group {
+    margin-bottom: 1.5rem;
 }
 
-nav a {
-    display: block;
-    padding: 1rem 1.5rem;
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: background-color 0.3s, outline 0.3s;
-}
-
-nav a:hover {
-    background-color: var(--secondary-bg);
-    outline: 2px solid var(--primary-color);
-}
-
-nav .login-button {
-    margin-left: auto;
-    background-color: var(--secondary-bg);
-    padding: 1rem 2rem;
-}
-
-/* Main content */
-main {
-    flex: 1;
-    padding: 2rem 1rem;
-}
-
-main .container {
-    max-width: 80rem;
-    margin: 0 auto;
-}
-
-/* Form fields */
-input:not([type=submit]),
-textarea {
-    display: block;
-    width: 100%;
-    max-width: 40rem;
-    padding: 0.75em;
-    border: 1px solid #666;
-    border-radius: 0.3rem;
-}
-
-label,
-input[type=submit] {
-    margin-top: 3rem;
-}
-
-input[type=submit] {
-    padding: 0.5em 2em;
-    background-color: var(--primary-bg);
-    border: none;
-    color: var(--text-color);
+.contact-section form label {
     font-weight: bold;
-    border-radius: 0.3rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.contact-section form input,
+.contact-section form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-section form input:focus,
+.contact-section form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: #f0f8ff;
+}
+
+.contact-section form button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-input[type=submit]:hover {
-    background-color: var(--secondary-bg);
-    color: var(--primary-color);
+.contact-section form button:hover {
+    background-color: var(--hover-color);
 }
 
-label {
-    display: block;
-    margin-bottom: 0.2em;
-    font-weight: bold;
-}
+footer {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    padding: 1.25rem;
+    text-align: center;
 
-.message {
-    font-size: 1.4rem;
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            display: inline-block;
+            margin: 0 0.625rem;
+
+            a {
+                color: var(--text-light);
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
 }
 
 .message.error {
-    color: #b90e0a;
-}
-
-/* Footer */
-footer {
-    width: 100%;
-    background-color: lightblue;
-    color: #FFFDFF;
-    margin-top: 22.3rem;
-    padding: 1rem 0;
-    flex-shrink: 0;
-}
-
-footer ul {
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-footer a {
-    display: block;
-    padding: 1rem 2rem;
-    color: black;
-    text-decoration: none;
-}
-
-footer p {
-    color: black;
-    text-align: center;
-}
-
-footer a:hover {
-    background-color: aliceblue;
-    outline: 2px solid black;
+    color: red;
 }

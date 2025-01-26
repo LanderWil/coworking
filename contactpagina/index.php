@@ -65,14 +65,16 @@ exit;
 ?><!DOCTYPE html>
 <html lang="nl">
 <head>
-    <title>Testform</title>
-    <meta charset="UTF-8"/>
-    <link rel="stylesheet"  href="./stylesc.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactpagina</title>
+    <link rel="stylesheet" href="stylesc.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 <header>
     <div class="container">
-        <h1>Zwart en Hard Werk</h1>
+        <a href="./index.html"><img src="./" alt="logo" width="140px"></a>
         <nav>
             <ul>
                 <li><a href="../">Home</a></li>
@@ -85,31 +87,40 @@ exit;
 </header>
 
 <main class="container">
-    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-        <h1>Contact form</h1>
-        <p class="message">Alle velden zijn verplicht, tenzij anders aangegeven.</p>
+    <section class="contact-section">
+        <h1>Contacteer ons</h1>
+        <p>Heb je vragen of opmerkingen? Vul onderstaand formulier in en we nemen zo snel mogelijk contact met je op.</p>
 
-        <div>
-            <label for="name">Jouw naam</label>
-            <input type="text" id="name" name="name" value="<?php echo htmlentities($name); ?>" class="input-text"/>
-            <span class="message error"><?php echo $msgName; ?></span>
-        </div>
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            <div class="form-group">
+                <label for="name">Naam</label>
+                <input type="text" id="name" name="name" value="<?php echo htmlentities($name); ?>" class="input-text" required>
+                <span class="message error"><?php echo $msgName; ?></span>
+            </div>
 
-        <div>
-            <label for="message">Boodschap</label>
-            <textarea name="message" id="message" rows="5" cols="40"><?php echo htmlentities($message); ?></textarea>
-            <span class="message error"><?php echo $msgMessage; ?></span>
-        </div>
+            <div class="form-group">
+                <label for="email">E-mailadres</label>
+                <input type="email" id="email" name="email" placeholder="voorbeeld@email.com" required>
+            </div>
 
-        <input type="submit" id="btnSubmit" name="btnSubmit" value="Verstuur"/>
-    </form>
+            <div class="form-group">
+                <label for="message">Boodschap</label>
+                <textarea name="message" id="message" rows="5" placeholder="Schrijf hier je bericht..." required><?php echo htmlentities($message); ?></textarea>
+                <span class="message error"><?php echo $msgMessage; ?></span>
+            </div>
+
+            <button type="submit" id="btnSubmit" name="btnSubmit" class="btn">Verstuur</button>
+        </form>
+    </section>
 </main>
+
 <footer>
     <div class="container">
         <ul>
             <li><a href="../">Home</a></li>
             <li><a href="../jobpagina">Jobpagina</a></li>
             <li><a href="./">Contact</a></li>
+            <li><a href="../loginpagina">Login</a></li>
         </ul>
         <p>&copy; Elektronica-Ict Odisee Gent</p>
     </div>
