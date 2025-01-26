@@ -74,7 +74,7 @@ exit;
 <body>
 <header>
     <div class="container">
-        <a href="./index.html"><img src="./" alt="logo" width="140px"></a>
+        <a href="./index.html"><img src="../images/Klus_&_co.png" alt="logo" width="140px"></a>
         <nav>
             <ul>
                 <li><a href="../">Home</a></li>
